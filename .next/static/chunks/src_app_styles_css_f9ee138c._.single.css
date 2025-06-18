@@ -1,0 +1,124 @@
+/* [project]/src/app/styles.css [app-client] (css) */
+:root {
+  --primary-yellow: #fcd34d;
+  --primary-green: #4caf50;
+  --primary-purple: #9c27b0;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link:after {
+  content: "";
+  background-color: var(--primary-yellow);
+  width: 0;
+  height: 2px;
+  transition: width .3s;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.category-icon {
+  transition: all .3s;
+}
+
+.category-icon:hover {
+  color: var(--primary-yellow);
+  transform: scale(1.1);
+}
+
+.product-card {
+  transition: transform .2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.discount-badge {
+  background: linear-gradient(45deg, #ec4899 0%, #d946ef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.discount-badge:after {
+  content: "";
+  background: linear-gradient(to right, #0000, #ffffff4d, #0000);
+  width: 200%;
+  height: 200%;
+  animation: 2s infinite shimmer;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  transform: rotate(45deg);
+}
+
+.price-tag {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%)rotate(45deg);
+  }
+
+  100% {
+    transform: translateX(100%)rotate(45deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+}
+
+.animate-marquee {
+  animation: 3s ease-in-out infinite alternate marquee;
+}
+
+.hero-section {
+  background-image: url("/images/hero-pattern.svg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-section:before {
+  content: "";
+  background: linear-gradient(to right, #000000b3, #0000004d);
+  position: absolute;
+  inset: 0;
+}
+
+.filter-section {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+/*# sourceMappingURL=src_app_styles_css_f9ee138c._.single.css.map*/
